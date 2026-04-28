@@ -22,7 +22,7 @@ export default function Navbar({ hasLogo, navItems }: NavbarProps) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-sky-950/75 backdrop-blur-md">
-      <div className="mx-auto flex h-20 w-full max-w-[1280px] items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8 xl:px-20">
         <Link href="#home" aria-label="Go to homepage" onClick={closeMenu}>
           <BrandLogo hasLogo={hasLogo} size="sm" />
         </Link>
@@ -71,7 +71,7 @@ export default function Navbar({ hasLogo, navItems }: NavbarProps) {
 
       {menuOpen ? (
         <div className="border-t border-white/10 bg-sky-950/95 lg:hidden">
-          <div className="mx-auto w-full max-w-[1280px] px-4 py-6 sm:px-6">
+          <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8 xl:px-20">
             <nav className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <Link

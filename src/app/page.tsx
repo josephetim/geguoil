@@ -140,18 +140,18 @@ const socialLinks = [
   { label: "Twitter", href: "https://x.com", icon: Radio },
 ];
 
-const containerClass = "mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8";
+const containerClass = "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-20";
 
 export default function Home() {
   const hasLogo = fs.existsSync(path.join(process.cwd(), "public", "logo.png"));
 
   return (
-    <main className="bg-white text-slate-900">
+    <main className="overflow-x-hidden bg-white text-slate-900">
       <Navbar hasLogo={hasLogo} navItems={navItems} />
 
       <section
         id="home"
-        className="relative isolate flex min-h-[900px] items-center overflow-hidden bg-sky-950 pb-16 pt-32 sm:pb-20 lg:min-h-[980px] lg:pt-36"
+        className="relative isolate flex min-h-screen items-center overflow-hidden bg-sky-950 pb-16 pt-28 sm:min-h-[720px] sm:pb-20 sm:pt-32 lg:min-h-[980px] lg:pt-36"
       >
         <Image
           src="/images/hero-refinery-night.png"
@@ -169,11 +169,11 @@ export default function Home() {
             <span className="rounded-lg border border-orange-500/30 bg-orange-600/20 px-4 py-1 text-sm font-bold uppercase tracking-widest text-orange-200">
               PREMIUM ENERGY SOLUTIONS
             </span>
-            <h1 className="mt-6 font-heading text-4xl font-extrabold leading-tight text-white sm:text-6xl lg:text-7xl lg:leading-[1.05]">
+            <h1 className="mt-6 font-heading text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[1.05]">
               Your Trusted Petroleum Partner
             </h1>
-            <p className="mt-5 max-w-3xl text-base font-light text-white/80 sm:text-xl lg:text-2xl">
-              Home Delivery • Retail &amp; Bulk Supply • LPG Solutions
+            <p className="mt-5 max-w-3xl text-base font-light text-white/80 sm:text-lg md:text-2xl">
+              Home Delivery &bull; Retail &amp; Bulk Supply &bull; LPG Solutions
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
@@ -204,7 +204,9 @@ export default function Home() {
       </section>
 
       <section id="about" className="scroll-mt-28 bg-white py-24 lg:py-28">
-        <div className={`${containerClass} grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]`}>
+        <div
+          className={`${containerClass} grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16`}
+        >
           <div>
             <p className="text-sm font-bold uppercase tracking-widest text-orange-600">
               ABOUT US
@@ -215,7 +217,7 @@ export default function Home() {
             <div className="mt-7 space-y-4 text-base leading-7 text-gray-600 sm:text-lg">
               <p>
                 At Gegu Oil, we believe that how you handle your vehicle
-                reflects your inner drive — and every journey deserves
+                reflects your inner drive &mdash; and every journey deserves
                 reliability, convenience, and care.
               </p>
               <p>
@@ -226,7 +228,7 @@ export default function Home() {
                 <p className="font-medium">
                   Whether you need to fill up at the pump, get gas delivered to
                   your doorstep, or power a full-scale operation, we&apos;ve got
-                  you covered—on time and with zero hassle.
+                  you covered&mdash;on time and with zero hassle.
                 </p>
               </div>
             </div>
@@ -236,7 +238,7 @@ export default function Home() {
             <div className="absolute -left-4 -top-4 h-24 w-24 rounded-xl bg-orange-600/10" />
             <div className="absolute -bottom-5 -right-5 h-32 w-32 rounded-xl bg-sky-950/5" />
             <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-[0px_4px_20px_-2px_rgba(0,0,0,0.05)]">
-              <div className="relative h-[420px] sm:h-[520px]">
+              <div className="relative h-[320px] sm:h-[420px] lg:h-[500px]">
                 <Image
                   src="/images/about-refinery.jpg"
                   alt="Large petroleum refinery complex"
@@ -247,12 +249,12 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="absolute bottom-6 left-6 flex items-center gap-4 rounded-xl border border-gray-100 bg-white/95 p-4 shadow-xl backdrop-blur">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-600 text-white">
-                <ShieldCheck className="h-6 w-6" />
+            <div className="absolute bottom-4 left-4 right-4 flex max-w-[290px] items-center gap-3 rounded-xl border border-gray-100 bg-white/95 p-3 shadow-xl backdrop-blur sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-none sm:gap-4 sm:p-4">
+              <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-orange-600 text-white sm:h-12 sm:w-12">
+                <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
               <div>
-                <p className="font-heading text-base font-bold text-sky-950">
+                <p className="font-heading text-sm font-bold text-sky-950 sm:text-base">
                   20+ Years
                 </p>
                 <p className="text-sm text-gray-500">Cognate Experience</p>
@@ -281,7 +283,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-14 grid gap-7 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -289,7 +291,7 @@ export default function Home() {
                   key={service.title}
                   className="group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-[0px_4px_20px_-2px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 >
-                  <div className="relative h-56">
+                  <div className="relative h-64 w-full">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -342,9 +344,9 @@ export default function Home() {
                   key={offer.title}
                   className="overflow-hidden rounded-3xl border-2 border-gray-200 bg-gray-50 shadow-[0px_4px_20px_-2px_rgba(0,0,0,0.05)]"
                 >
-                  <div className="grid lg:grid-cols-2">
+                  <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div
-                      className={`relative min-h-[280px] sm:min-h-[360px] lg:min-h-[440px] ${reverse ? "lg:order-2" : ""}`}
+                      className={`relative h-72 sm:h-96 lg:h-full lg:min-h-[440px] ${reverse ? "lg:order-2" : ""}`}
                     >
                       <Image
                         src={offer.image}
@@ -356,7 +358,7 @@ export default function Home() {
                     </div>
 
                     <div
-                      className={`space-y-6 p-8 sm:p-12 ${reverse ? "lg:order-1" : ""}`}
+                      className={`space-y-6 p-6 sm:p-8 lg:p-16 ${reverse ? "lg:order-1" : ""}`}
                     >
                       <div className="flex items-center gap-4">
                         <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-orange-600/10 text-orange-600 ring-1 ring-orange-600/20">
@@ -412,8 +414,8 @@ export default function Home() {
         />
 
         <div className={containerClass}>
-          <div className="rounded-3xl border border-white/10 bg-cyan-900 p-6 shadow-2xl sm:p-10 lg:p-12">
-            <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
+          <div className="rounded-3xl border border-white/10 bg-cyan-900 p-6 shadow-2xl sm:p-8 lg:p-12">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
               <div className="space-y-7 text-white">
                 <div>
                   <h2 className="font-heading text-3xl font-extrabold sm:text-4xl">
@@ -427,7 +429,7 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-5">
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-orange-500">
                       <PhoneCall className="h-5 w-5" />
                     </div>
@@ -438,7 +440,7 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-orange-500">
                       <Mail className="h-5 w-5" />
                     </div>
@@ -449,13 +451,13 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-orange-500">
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
                       <p className="text-sm text-white/50">Head Office</p>
-                      <p className="font-heading text-lg font-bold">
+                      <p className="font-heading text-lg font-bold leading-snug">
                         Kubwa-Gwarinpa / Zuba Expressway, Abuja
                       </p>
                     </div>
@@ -573,7 +575,7 @@ export default function Home() {
 
       <footer className="border-t border-white/5 bg-slate-900 text-white">
         <div className={`${containerClass} py-16`}>
-          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <BrandLogo hasLogo={hasLogo} size="md" />
               <p className="mt-6 max-w-sm text-sm leading-6 text-white/60">
@@ -652,7 +654,7 @@ export default function Home() {
           </div>
 
           <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/40 sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 Gegu Oil. All rights reserved.</p>
+            <p>&copy; 2026 Gegu Oil. All rights reserved.</p>
             <div className="flex items-center gap-6">
               <Link href="#" className="transition-colors hover:text-white/70">
                 Privacy Policy
@@ -667,3 +669,4 @@ export default function Home() {
     </main>
   );
 }
+

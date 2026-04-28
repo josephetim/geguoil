@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { BrandLogo } from "@/components/home/brand-logo";
 import Navbar from "@/components/home/navbar";
+import TypingText from "@/components/TypingText";
 
 type ServiceItem = {
   title: string;
@@ -151,7 +152,7 @@ export default function Home() {
 
       <section
         id="home"
-        className="relative isolate flex min-h-screen items-center overflow-hidden bg-sky-950 pb-16 pt-28 sm:min-h-[720px] sm:pb-20 sm:pt-32 lg:min-h-[980px] lg:pt-36"
+        className="relative isolate flex min-h-screen items-center overflow-hidden bg-sky-950 pb-16 pt-28 sm:min-h-[720px] sm:pb-20 sm:pt-32 lg:min-h-[980px] lg:pt-1"
       >
         <Image
           src="/images/hero-refinery-night.png"
@@ -166,13 +167,16 @@ export default function Home() {
 
         <div className={`${containerClass} relative z-10`}>
           <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
-            <span className="rounded-lg border border-orange-500/30 bg-orange-600/20 px-4 py-1 text-sm font-bold uppercase tracking-widest text-orange-200">
+            <span className="lg:mb-6 rounded-lg border border-orange-500/30 bg-orange-600/20 px-4 py-1 text-sm font-bold uppercase tracking-widest text-orange-200">
               PREMIUM ENERGY SOLUTIONS
             </span>
-            <h1 className="mt-6 font-heading text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[1.05]">
+            {/* <h1 className="mt-6 font-heading text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[1.05]">
               Your Trusted Petroleum Partner
-            </h1>
-            <p className="mt-5 max-w-3xl text-base font-light text-white/80 sm:text-lg md:text-2xl">
+            </h1> */}
+            <div className="mx-auto h-[28px] sm:h-[32px] mt-10 mb-10 flex items-center justify-center">
+              <TypingText className="mt-6 font-heading text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[1.05]" />
+            </div>
+             <p className="mt-5 lg:mt-12 max-w-3xl text-base font-light text-white/80 sm:text-lg md:text-2xl">
               Home Delivery &bull; Retail &amp; Bulk Supply &bull; LPG Solutions
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
